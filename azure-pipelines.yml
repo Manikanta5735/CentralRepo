@@ -42,3 +42,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'ROOT$(Build.BuildID).war'
     publishLocation: 'Container'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'azdevops-azure-serviceconnection'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az storage blob upload-batch --account-name  samplestoragemk --account-key $(STORAGE_ACCOUNT_KEY) --destination rootcontainer --source /home/vsts/work/1/a'
