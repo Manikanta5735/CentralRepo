@@ -34,3 +34,5 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     OverWrite: true
 
+- script: ls -al $(Build.ArtifactStagingDirectory)
+  displayName: 'List Artifact Staging Files'
