@@ -24,3 +24,6 @@ steps:
 
 - script: ls -al && chmod 700 build.sh && sudo bash ./build.sh && ls -al
   displayName: 'Running the build file and checking it'
+
+- script: ls -al && mv ROOT.war ROOT(Build.BuildID).war && ls -al
+  displayName: 'Renaming War file'
