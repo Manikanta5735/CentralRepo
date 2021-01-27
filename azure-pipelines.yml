@@ -18,3 +18,9 @@ steps:
 
 - script: echo "The Build ID is $(Build.BuildID) with Build Number $(Build.BuildNumber)"
   displayName: 'Displaying BuildID and Build Number' 
+
+- script: sudo apt update && sudo apt install openjdk-8-jdk && java -version
+  displayName: 'Installing Java and Checking It'
+
+- script: ls -al && chmod 700 build.sh && sudo bash ./build.sh && ls -al
+  displayName: 'Running the build file and checking it'
