@@ -36,3 +36,9 @@ steps:
 
 - script: ls -al $(Build.ArtifactStagingDirectory)
   displayName: 'List Artifact Staging Files'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'ROOT$(Build.BuildID).war'
+    publishLocation: 'Container'
