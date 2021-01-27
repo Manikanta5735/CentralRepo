@@ -15,3 +15,6 @@ steps:
 
 - script: ls -al && pwd
   displayName: 'List Files and Show Present WOrking Directory'
+
+- script: echo "The Build ID is $(Build.BuildID with Build Number $(Build.BuildNumber)"
+  displayName: 'Displaying BuildID and Build Number' 
